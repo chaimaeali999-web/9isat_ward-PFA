@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', Arial, sans-serif;
+    background: linear-gradient(135deg, #FFF5F6 0%, #FFE6EB 100%);
+    color: #660D1B;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px 40px;
+}
+
+/* Header styles - pour s'adapter à votre header existant */
+header {
+    background: linear-gradient(135deg, #B32039 0%, #E64563 100%);
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(179, 32, 57, 0.2);
+}
+
+h1 {
+    color: #B32039;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #B32039 0%, #E64563 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #660D1B;
+    margin-bottom: 25px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+/* Bouton Ajouter Fleur */
+.add {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #E64563 0%, #B32039 100%);
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(230, 69, 99, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.add::before {
+    content: "➕";
+    font-size: 1.2rem;
+}
+
+.add:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(179, 32, 57, 0.4);
+    background: linear-gradient(135deg, #B32039 0%, #8B1A30 100%);
+    color: #FFFFFF;
+}
+
+.add:active {
+    transform: translateY(0);
+}
+
+/* Table moderne */
+table {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 24px;
+    border: 1px solid #FFE6EB;
+    box-shadow: 0 15px 40px rgba(255, 192, 203, 0.25);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+th {
+    background: linear-gradient(135deg, #FFE6EB 0%, #FFD4DC 100%);
+    color: #B32039;
+    font-weight: 700;
+    padding: 20px 24px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border-bottom: 2px solid #FFA3B4;
+}
+
+td {
+    padding: 18px 24px;
+    color: #660D1B;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #FFF0F3;
+    font-weight: 500;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #FFF9FA;
+}
+
+/* Images */
+img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #FFE6EB;
+    box-shadow: 0 6px 15px rgba(255, 192, 203, 0.2);
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(179, 32, 57, 0.2);
+    border-color: #E64563;
+}
+
+/* Actions buttons */
+td:last-child {
+    white-space: nowrap;
+}
+
+td:last-child a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+/* Bouton Modifier */
+td:last-child a[href*="edit.php"] {
+    background: linear-gradient(135deg, #FFE6EB 0%, #FFD4DC 100%);
+    color: #B32039;
+    margin-right: 12px;
+    border: 1px solid #FFA3B4;
+}
+
+td:last-child a[href*="edit.php"]:hover {
+    background: linear-gradient(135deg, #FFA3B4 0%, #E64563 100%);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 69, 99, 0.3);
+}
+
+/* Bouton Supprimer */
+td:last-child a[href*="delete.php"] {
+    background: #FFFFFF;
+    color: #B32039;
+    border: 1px solid #B32039;
+}
+
+td:last-child a[href*="delete.php"]:hover {
+    background: linear-gradient(135deg, #B32039 0%, #8B1A30 100%);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(179, 32, 57, 0.3);
+    border-color: transparent;
+}
+
+/* Lien Déconnexion */
+a[href="logout.php"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #FFFFFF;
+    color: #B32039;
+    border: 2px solid #B32039;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+a[href="logout.php"]::before {
+    content: "🚪";
+    font-size: 1.1rem;
+}
+
+a[href="logout.php"]:hover {
+    background: linear-gradient(135deg, #B32039 0%, #8B1A30 100%);
+    color: #FFFFFF;
+    box-shadow: 0 6px 15px rgba(179, 32, 57, 0.3);
+    transform: translateY(-2px);
+    border-color: transparent;
+}
+
+/* Animation pour les lignes du tableau */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+tr {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+tr:nth-child(1) { animation-delay: 0.1s; }
+tr:nth-child(2) { animation-delay: 0.2s; }
+tr:nth-child(3) { animation-delay: 0.3s; }
+tr:nth-child(4) { animation-delay: 0.4s; }
+tr:nth-child(5) { animation-delay: 0.5s; }
+tr:nth-child(6) { animation-delay: 0.6s; }
+tr:nth-child(7) { animation-delay: 0.7s; }
+tr:nth-child(8) { animation-delay: 0.8s; }
+tr:nth-child(9) { animation-delay: 0.9s; }
+tr:nth-child(10) { animation-delay: 1s; }
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    body {
+        padding: 15px 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    th, td {
+        padding: 12px 15px;
+    }
+    
+    td:last-child a {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    /* Table responsive style */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 2px solid #FFE6EB;
+        border-radius: 20px;
+        background: #FFFFFF;
+        margin-bottom: 25px;
+        padding: 15px;
+        box-shadow: 0 8px 20px rgba(255, 192, 203, 0.15);
+    }
+    
+    td {
+        border: none;
+        border-bottom: 1px solid #FFF0F3;
+        position: relative;
+        padding: 12px 12px 12px 45%;
+        text-align: right;
+    }
+    
+    td:last-child {
+        border-bottom: none;
+        text-align: center;
+        padding: 15px 12px;
+    }
+    
+    td:before {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 40%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: #B32039;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Labels pour responsive */
+    td:nth-of-type(1):before { content: "📷 Image"; }
+    td:nth-of-type(2):before { content: "🌸 Nom"; }
+    td:nth-of-type(3):before { content: "💰 Prix"; }
+    td:nth-of-type(4):before { content: "🎨 Couleur"; }
+    td:nth-of-type(5):before { content: "📏 Taille"; }
+    td:nth-of-type(6):before { content: "⚡ Actions"; }
+    
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .add {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    a[href="logout.php"] {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Petit écran */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+    
+    td {
+        padding: 10px 10px 10px 45%;
+        font-size: 0.85rem;
+    }
+    
+    td:before {
+        font-size: 0.75rem;
+    }
+    
+    td:last-child a {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Scrollbar personnalisé */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFE6EB;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #E64563 0%, #B32039 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B32039;
+}
+
+/* Effet de fond */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23FFE6EB" fill-opacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    pointer-events: none;
+    z-index: -1;
+}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Outfit', Arial, sans-serif;
+    background: #FFF5F6;
+    margin: 0;
+    padding: 20px;
+    color: #660D1B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 440px;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #FFE6EB;
+    box-shadow: 0 15px 35px rgba(255, 192, 203, 0.35);
+    box-sizing: border-box;
+    animation: slideUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+h1 {
+    text-align: center;
+    color: #B32039;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 12px;
+    border: 2px solid #FFA3B4;
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: #660D1B;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input::placeholder {
+    color: #FFA3B4;
+}
+
+input:focus {
+    border-color: #E64563;
+    box-shadow: 0 0 0 4px rgba(230, 69, 99, 0.15);
+}
+
+/* Style for file input wrapper/look if applicable, but native input is used */
+input[type="file"] {
+    background: #FFF5F6;
+    border: 2px dashed #FFA3B4;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    background: #FFE6EB;
+    border-color: #E64563;
+}
+
+button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px;
+    background: #E64563;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(230, 69, 99, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+button:hover {
+    background: #B32039;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(179, 32, 57, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.error {
+    background: #FFE6EB;
+    border-left: 4px solid #B32039;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #B32039;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.error p {
+    margin: 4px 0;
+}
+
+a {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #E64563;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #B32039;
+    transform: translateY(-1px);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 24px 16px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
